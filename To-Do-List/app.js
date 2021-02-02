@@ -3,32 +3,57 @@
 
 var form = document.querySelector('form');
 
-var ul = document.querySelector('.lists');
+var ul = document.querySelector('.todo-list');
 
-var toDo = document.querySelector('.todo-input').value;
+var toDo = document.querySelector('.todo-input');
 
 form.addEventListener('submit', addTask);
 
+ul.addEventListener('click', removeTask);
+
 function addTask(e) {
+
     // Create Element
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
     
+    // Create LI
     const li = document.createElement('li');
+    li.innerText = toDo.value;
+    li.classList.add('todo-item');
 
-    li.className = "li-lists incomplete";
+    todoDiv.appendChild(li);
 
-    li.appendChild(document.createTextNode(toDo));
-
-    const link = document.createElement('a');
-    link.className = "isCompleted";
+    const link = document.createElement('button');
     link.innerHTML = '<i class = "fas fa-check"></i>';
-    const deleteLink = document.createElement('a');
-    deleteLink.className = 'delete-task';
+    link.classList.add('complete-btn');
+    todoDiv.appendChild(link);
+    const deleteLink = document.createElement('button');
     deleteLink.innerHTML = '<i class = "far fa-times-circle"></i>';
-    link.appendChild(deleteLink);
-    li.appendChild(link);
+    deleteLink.classList.add('delete-btn');
+    todoDiv.appendChild(deleteLink);
 
-    ul.appendChild(li);
-    toDo = '';
+    ul.appendChild(todoDiv);
 
     e.preventDefault();
+}
+
+function removeTask(e) {
+    const item = e.target;
+
+    // Delete
+    if(item.classList[0] === 'delete-btn'){
+        const todo = item.parentElement;
+        todo.classList.add("fall");
+
+        todo.addEventListener('transitionend', function() {
+            todo.remove();
+        })
+    }
+
+    // Check
+    if(item.classList[0] === 'complete-btn'){
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+    }
 }
