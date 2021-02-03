@@ -1,0 +1,87 @@
+/* 
+    Fonts
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* Variables */
+
+:root {
+    --primary-background-color : #303952;
+    --primary-text-color: #d2dae2;
+    --primary-hover-color: #747d8c;
+    --heading-Color: #f1f2f6;
+    --transition : all 0.3s ease-in-out;
+    --radius : 0.3rem;
+    --spacing : 0.1rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+    --font: "Roboto", sans-serif;
+}
+
+/* Styles */
+
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    line-height: 1.5;
+    background: var(--primary-background-color);
+    color: var(--primary-text-color);
+    font-size: 0.875rem;
+}
+
+h1 {
+    letter-spacing: var(--spacing);
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+main {
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    text-align: center;   
+}
+
+#value {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+button {
+    text-transform: uppercase;
+    background: var(--primary-background-color);
+    color: var(--primary-text-color);
+    border: 1px solid var(--primary-text-color);
+    padding: 10px;
+    margin: 3px 5px;
+    font-size: 0.875rem;
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: var(--radius);
+    box-shadow: var(--light-shadow);
+}
+
+button:hover {
+    color: var(--primary-background-color);
+    background: var(--primary-text-color);
+    border: 1px solid var(--primary-hover-color);
+}
+
+button:focus {
+    outline: none;
+}
