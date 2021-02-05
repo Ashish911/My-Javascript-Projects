@@ -1,0 +1,30 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    background-color: black;
+}
+
+button {
+    margin: auto auto;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+button:focus {
+    outline: none;
+}
