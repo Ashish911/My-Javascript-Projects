@@ -5,11 +5,13 @@ var form = document.querySelector('form');
 var ul = document.querySelector('.todo-list');
 var toDo = document.querySelector('.todo-input');
 const filterOption = document.querySelector('.filter-todo');
+const clear = document.querySelector('.clear-todos');
 
 document.addEventListener('DOMContentLoaded', getTodos);
 form.addEventListener('submit', addTask);
 ul.addEventListener('click', removeTask);
 filterOption.addEventListener('click', filterTodo);
+clear.addEventListener('click', clearAllTodo)
 
 function getTodos() {
     let todos;
@@ -46,29 +48,34 @@ function getTodos() {
 
 function addTask(e) {
 
-    // Create Element
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    
-    // Create LI
-    const li = document.createElement('li');
-    li.innerText = toDo.value;
-    li.classList.add('todo-item');
-
-    todoDiv.appendChild(li);
-
-    const link = document.createElement('button');
-    link.innerHTML = '<i class = "fas fa-check"></i>';
-    link.classList.add('complete-btn');
-    todoDiv.appendChild(link);
-    const deleteLink = document.createElement('button');
-    deleteLink.innerHTML = '<i class = "far fa-times-circle"></i>';
-    deleteLink.classList.add('delete-btn');
-    todoDiv.appendChild(deleteLink);
-
-    ul.appendChild(todoDiv);
-
-    todoInLocalStorage(toDo.value);
+    if(validate() == true) {
+        
+            // Create Element
+            const todoDiv = document.createElement("div");
+            todoDiv.classList.add("todo");
+            
+            // Create LI
+            const li = document.createElement('li');
+            li.innerText = toDo.value;
+            li.classList.add('todo-item');
+        
+            todoDiv.appendChild(li);
+        
+            const link = document.createElement('button');
+            link.innerHTML = '<i class = "fas fa-check"></i>';
+            link.classList.add('complete-btn');
+            todoDiv.appendChild(link);
+            
+            const deleteLink = document.createElement('button');
+            deleteLink.innerHTML = '<i class = "far fa-times-circle"></i>';
+            deleteLink.classList.add('delete-btn');
+            todoDiv.appendChild(deleteLink);
+        
+            ul.appendChild(todoDiv);
+        
+            todoInLocalStorage(toDo.value);
+        
+    }
 
     e.preventDefault();
 }
@@ -156,14 +163,53 @@ function removeFromLocal(todo) {
     // })
 }
 
+// Clear all from UI
 function clearAllTodo() {
     while(toDo.firstChild) {
         toDo.remove(toDo.firstChild);
     }
 
     clearAlltodoFromLS();
+    location.reload();
 }
 
+// Clear all from Local Storage
 function clearAlltodoFromLS() {
     localStorage.clear();
+}
+
+// For Validation
+function validate() {
+    if(toDo.value == ''){
+        showMessage('Please enter todo name', "red");
+        return false;
+    } else {
+        showMessage("Successfully Added", "green");
+        return true;
+    }
+}
+
+// Show Message
+function showMessage(msg, color) {
+    // Create Elements
+    const div = document.createElement('div');
+
+    const p = document.createElement('p');
+
+    div.className = 'msg';
+
+    p.textContent = msg;
+    p.style.color = color;
+
+    div.appendChild(p);
+
+    var after = document.querySelector('.container');
+    var before = document.querySelector('form');
+
+    after.insertBefore(div, before);
+
+    setTimeout(function() {
+        document.querySelector('.msg').remove();
+    }, 1000);
+
 }

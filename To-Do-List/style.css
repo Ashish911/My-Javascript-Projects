@@ -15,6 +15,31 @@ header {
     font-size: 1.5rem;
 }
 
+.clear-tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.clear-todos {
+    padding: 10px 20px 10px 20px;
+    border: none;
+    background-color: #67568C;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    transition: 0.5s all ease;
+    outline: none;
+}
+
+.clear-todos:hover {
+    border: 1px solid #67568C;
+    color: #67568C;
+    background-color: white;
+}
+
 header,
 form {
     min-height: 20vh;
@@ -23,16 +48,19 @@ form {
     align-items: center;
 }
 
+
 form input, form button {
     padding: 0.5rem;
     font-size: 2rem;
     border: none;
     background: white;
+    outline: none;
+    color: #67568C;
     /* border-radius: 10px; */
 }
 
 form button {
-    color: #FF6E6C;
+    color: #67568C;
     background:  white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -44,8 +72,15 @@ form button {
 } */
 
 form button:hover {
-    background: #FF6E6C;
-    color: white
+    background: #67568C;
+    color: white;
+}
+
+.msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .todo-container {
@@ -62,7 +97,7 @@ form button:hover {
 .todo {
     margin: 0.5rem;
     background: white;
-    color: black;
+    color: #67568C;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -84,8 +119,15 @@ form button:hover {
 }
 
 .complete-btn {
-    background: #FFE380;
+    background: #67568C;
+    outline: none;
 }
+
+.delete-btn {
+    color: #F9D271;
+    outline: none;
+}
+
 
 .todo-item {
     padding: 0rem 0.5rem;
@@ -101,7 +143,7 @@ form button:hover {
 }
 
 .fall {
-    transform: translateY(8rem) rotate(20deg);
+    transform: translateX(20rem);
     opacity: 0;
 }
 
@@ -121,16 +163,16 @@ select {
 }
 
 select {
-    color: #FF6E6C;
+    color: #67568C;
     width: 10rem;
     cursor: pointer;
-    padding: 1rem;
+    padding: 1.1rem;
 }
 
 .select::after {
     content: "\25BC";
     position: absolute;
-    background: #FF6E6C;
+    background: #67568C;
     top: 0;
     right: 0;
     padding: 1rem;
@@ -140,5 +182,5 @@ select {
 
 .select:hover::after {
     background: white;
-    color: #FF6E6C;
+    color: #67568C;
 }
