@@ -17,7 +17,8 @@ body {
 .container {
     width: 60%;
     height: 70%;
-    background: grey;
+    background: black;
+    border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -29,6 +30,11 @@ body {
 
 .right {
     height: 60%;
+    width: 32%;
+}
+
+.amount, .interest, .years {
+    margin-top: 20px;
 }
 
 /* Text styles */
@@ -43,26 +49,178 @@ body {
 
 }
 
+/* Left css */
+
+.amountText_other, .yearsText_other, .interestText_other {
+    display: flex;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.positioning {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.text-large {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.text-mid {
+    font-size: 12px;
+}
+
+
+/* Span under rnage */
+.amountRange {
+    display: flex;
+    flex-direction: column;
+}
+
+.valueRange {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 9px;
+    color: #EDEDED;
+}
+
+
 /* Range CSS */
 
 .range {
     -webkit-appearance: none;
     width: 100%;
-    height: 8px;
-    background: #E2E2E2;
+    height: 3px;
+    background: #FF8906;
     outline: none;
     margin-top: 1rem;
     border-radius: 10px;
-    overflow-x: hidden;
+    
 }
 
 .range::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: white;
     border: 1px solid #FF8906;
     cursor: pointer;
-    box-shadow: -407px 0 0 400px #FF8906;
+}
+
+/* Button */
+
+.buttonclass {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.submitBtn {
+    padding: 5px 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: #FF8906;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+    transform: scale(1.05);
+    color: #FF8906;
+    background: #0F0E17;
+    border: 1px solid #FF8906;
+}
+
+/* Inputs */
+
+.inputdiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+#starting, #ending {
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: #FF8906;
+}
+
+#starting::placeholder, #ending::placeholder {
+    color: #FF8906;
+}
+
+/* Results */
+.results {
+    margin-top: 20px;
+    height: 80%;
+    width: 100%;
+    background: #FF8906;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.para {
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.money {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.dolla {
+    height: 48px;
+    color: #EDEDED;
+}
+
+.total_Amount {
+    margin-left: 10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    margin-top: 10px;
+}
+
+.leftInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.rightInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.v_small {
+    font-size: 9px;
+    color: #EDEDED;
+}
+
+.thick {
+    font-size: 20px;
 }
