@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css">
     <title>Loan Calculator</title>
 </head>
@@ -22,12 +23,12 @@
                     <div class="amountText_other">
                         <p class="text-small">$</p>
                         <div class="positioning">
-                            <p class="text-large">25000</p>
+                            <p class="text-large" id="amountBig">1</p>
                         </div>
                     </div>
                 </div>
                 <div class="amountRange">
-                    <input type="range" value="0" id="amountInput" class="range">
+                    <input type="range" value="0" id="amountInput" class="range" min="1" max="25000">
                     <div class="valueRange">
                         <span id="startingAmount">$1</span>
                         <span id="endingAmount">$25000</span>
@@ -40,12 +41,12 @@
                     <div class="interestText_other">
                         <p class="text-small">%</p>
                         <div class="positioning">
-                            <p class="text-large">15</p>
+                            <p class="text-large" id="interestBig">1</p>
                         </div>
                     </div>
                 </div>
                 <div class="interestRange">
-                    <input type="range" value="0" id="interestInput" class="range">
+                    <input type="range" value="0" id="interestInput" class="range" min="1" max="100">
                     <div class="valueRange">
                         <span id="startingInterest">1</span>
                         <span id="endingInterest">100</span>
@@ -56,14 +57,14 @@
                 <div class="yearsText">
                     <p class="text-mid">Years</p>
                     <div class="yearsText_other">
-                        <p class="text-small">%</p>
+                        <p class="text-small"><i class="far fa-clock"></i></p>
                         <div class="positioning">
-                            <p class="text-large">5</p>
+                            <p class="text-large" id="yearBig">1</p>
                         </div>
                     </div>
                 </div>
                 <div class="yearRange">
-                    <input type="range" value="0" id="yearInput" class="range">
+                    <input type="range" value="0" id="yearInput" class="range" min="1" max="20">
                     <div class="valueRange">
                         <span id="startingyear">1</span>
                         <span id="endingyear">20</span>
@@ -76,8 +77,8 @@
         </div>
         <div class="right">
             <div class="inputdiv">
-                <input type="text" id="starting" placeholder="Starting Amount">
-                <input type="text" id="ending" placeholder="Ending Amount">
+                <input type="number" min="1" id="starting" placeholder="Starting Amount">
+                <input type="number" min="2" id="ending" placeholder="Ending Amount">
             </div>
             <div class="results">
                 <p class="para">Your total payment will be</p>
@@ -88,15 +89,17 @@
                 <div class="info">
                     <div class="leftInfo">
                         <p class="v_small">Interest</p>
-                        <p class="thick">2.50%</p>
+                        <p class="thick" id="thickInterest">$2.50</p>
                     </div>
                     <div class="rightInfo">
                         <p class="v_small">Monthly</p>
-                        <p class="thick">$250</p>
+                        <p class="thick" id="monthlyPayment">$250</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
