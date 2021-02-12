@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Tips Calculator</title>
+</head>
+<body>
+    
+    <div class="container">
+        <p class="header">Tipper</p>
+        <div class="top">
+            <div class="bill-section">
+                <p>Bill</p>
+                <input type="number" class="billValue">
+            </div>
+            <div class="tip-section">
+                <p>Tip</p>
+                <p>59.59</p>
+            </div>
+            <hr>
+            <div class="total-section">
+                <p>Total</p>
+                <p>450</p>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="tip-ranger">
+                <div class="tip-text">
+                    <p>Tip</p>
+                    <p>15%</p>
+                </div>
+                <input type="range" id="tip-input">
+            </div>
+            <div class="split-ranger">
+                <div class="split-text">
+                    <p>Split</p>
+                    <p>2</p>
+                </div>
+                <input type="range" id="split-input">
+            </div>
+            <hr>
+            <div class="split-total-section">
+                <p>Split Total</p>
+                <p>450</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Amount Rounding in</p>
+            <div class="buttons">
+                <button id="cielamount">Up</button>
+                <button id="flooramount">Down</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
