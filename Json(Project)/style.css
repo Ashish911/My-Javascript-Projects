@@ -5,237 +5,111 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f9f4ef;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0f0e17;
-  color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Belleza', sans-serif;
 }
 
 .container {
-  width: 60%;
-  height: 70%;
-  background: black;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.left {
-  height: 80%;
-}
-
-.right {
-  height: 60%;
-  width: 32%;
-}
-
-.amount,
-.interest,
-.years {
-  margin-top: 20px;
-}
-
-/* Text styles */
-
-.big {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.small {
-  font-size: 14px;
-}
-
-/* Left css */
-
-.amountText_other,
-.yearsText_other,
-.interestText_other {
-  display: flex;
-}
-
-.text-small {
-  font-size: 12px;
-}
-
-.positioning {
-  display: flex;
-  align-items: center;
-  height: 30px;
-}
-
-.text-large {
-  font-size: 20px;
-  margin-top: 10px;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-.text-mid {
-  font-size: 12px;
-}
-
-/* Span under rnage */
-.amountRange {
   display: flex;
   flex-direction: column;
-}
-
-.valueRange {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-  font-size: 9px;
-  color: #ededed;
-}
-
-/* Range CSS */
-
-.range {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 3px;
-  background: #ff8906;
-  outline: none;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
-
-.range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #ff8906;
-  cursor: pointer;
-}
-
-/* Button */
-
-.buttonclass {
-  display: flex;
   justify-content: center;
-  margin-top: 5px;
+  align-items: center;
+  /* background-color: white; */
 }
 
-.submitBtn {
-  padding: 5px 30px;
-  border-radius: 5px;
-  outline: none;
+.getCustomer,
+.getCustomers {
+  padding: 10px 20px;
+  border-radius: 20px;
   border: none;
+  outline: none;
+  font-size: 19px;
+  background-color: #8c7851;
   color: white;
   cursor: pointer;
-  background: #ff8906;
-  font-size: 17px;
-  transition: all 0.3s ease;
 }
 
-.submitBtn:hover {
-  transform: scale(1.05);
-  color: #ff8906;
-  background: #0f0e17;
-  border: 1px solid #ff8906;
+.getCustomer {
+  margin-right: 30px;
 }
 
-/* Inputs */
+.getCustomers {
+  margin-left: 30px;
+}
 
-.inputdiv {
+.grid {
   display: flex;
-  justify-content: space-around;
 }
 
-#starting,
-#ending {
-  height: 30px;
-  width: 120px;
-  border-radius: 5px;
-  border: none;
-  text-align: center;
-  color: #ff8906;
-}
-
-#starting::placeholder,
-#ending::placeholder {
-  color: #ff8906;
-}
-
-#starting:focus,
-#ending:focus {
-  outline: none;
-}
-
-#starting::-webkit-inner-spin-button,
-#starting::-webkit-outer-spin-button,
-#ending::-webkit-inner-spin-button,
-#ending::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Results */
-.results {
-  margin-top: 20px;
-  height: 80%;
-  width: 100%;
-  background: #ff8906;
-  border-radius: 5px;
+.card {
+  background-color: white;
+  width: 300px;
+  margin: 0 10px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-radius: 50px 50px 10px 10px;
 }
 
-.para {
-  margin-bottom: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
+.pic {
+  width: 300px;
+  position: relative;
 }
 
-.money {
-  display: flex;
-  margin-bottom: 20px;
+.absolute {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  margin-bottom: 4px;
+  padding: 5px 15px;
+  background-color: #8c7851;
+  color: white;
 }
 
-.dolla {
-  height: 48px;
-  color: #ededed;
-}
-
-.total_Amount {
-  margin-left: 10px;
-  font-size: 48px;
-  font-weight: bold;
+.card_image {
+  border-radius: 50px 50px 0px 0px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: top;
 }
 
 .info {
-  display: flex;
-  margin-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 14px;
 }
 
-.leftInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 10px;
+.name {
+  margin: 15px 0px;
 }
 
-.rightInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contactNo {
+  margin: 15px 0px;
+}
+
+.description {
+  margin: 10px 0px;
+}
+
+.remove {
+  display: none;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #ff5959;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove i {
   margin-left: 10px;
-}
-
-.v_small {
-  font-size: 9px;
-  color: #ededed;
-}
-
-.thick {
-  font-size: 20px;
+  font-size: 18px;
 }
