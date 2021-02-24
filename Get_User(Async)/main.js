@@ -8,7 +8,10 @@ function users() {
         let output = '';
         data.forEach(function(datas) {
             output+= `
-                <div> 
+                <div class="card"> 
+                    <div class="circle">
+                        <p>A</p>
+                    </div>
                     <p>${datas.name}</p>
                     <p>${datas.website}</p>
                     <p>${datas.email}</p>
