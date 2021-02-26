@@ -1,4 +1,8 @@
+const number = document.querySelector('.inputs');
+
 document.querySelector('.btn').addEventListener('click', getJokes);
+
+const msg = ["Just 1 bro u serious", "Damn Bro 2 ain't enough init", "3's a fine numba", "Bro you need to go to the doctor"];
 
 // Using Old XHR METHOD
 
@@ -42,6 +46,17 @@ document.querySelector('.btn').addEventListener('click', getJokes);
 
 function getJokes() {
 
+    document.querySelector('.msg').style.display = 'flex';
+    if(number.value == 1) {
+        document.querySelector('.msgText').innerHTML = msg[number.value - 1];
+    } else if(number.value == 2) {
+        document.querySelector('.msgText').innerHTML = msg[number.value - 1];
+    } else if(number.value == 3) {
+        document.querySelector('.msgText').innerHTML = msg[number.value - 1];
+    } else if(number.value >= 4) {
+        document.querySelector('.msgText').innerHTML = msg[3];
+    }
+
     jokes()
     .then(data => {
         console.log(data);
@@ -55,12 +70,15 @@ function getJokes() {
         document.querySelector('.data').innerHTML = output;
     })
     .catch(err => console.log(err));
+
+    setTimeout(function(){
+        document.querySelector('.msg').style.display = 'none';
+    },2000)
 }
 
 async function jokes() {
-    const number = document.querySelector('.inputs').value;
 
-    const response = await fetch(`http://api.icndb.com/jokes/random/${number}`)
+    const response = await fetch(`http://api.icndb.com/jokes/random/${number.value}`)
 
     const data = await response.json();
 
