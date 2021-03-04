@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.svg {
+  position: fixed;
+  right: 15px;
+}
+
+.container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 300px;
+  width: 450px;
+  border-radius: 5px;
+}
+
+.middle {
+  text-align: center;
+}
+
+.upper {
+  display: flex;
+}
+
+.lower {
+  display: flex;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
