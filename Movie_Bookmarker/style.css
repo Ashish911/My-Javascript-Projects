@@ -20,11 +20,135 @@ body {
   margin-bottom: 50px;
 }
 
+.heading {
+  color: #0065b0;
+}
+
 .container {
   height: 75%;
   width: 75%;
   background-color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+
+.left {
+  margin-right: 50px;
+}
+
+.right {
+  width: 35%;
+}
+
+form {
+  background: white;
+  width: 100%;
+  height: 60%;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  margin-left: 12%;
+  margin-bottom: 10%;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: #3da9fc;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #3da9fc;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #3da9fc;
+  transition: all 0.3s ease;
+}
+
+.content-siteName {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #3da9fc;
+  transition: all 0.3s ease;
+}
+
+.content-siteUrl {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: #3da9fc;
+  transition: all 0.3s ease;
+}
+
+.form label::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  border-bottom: 3px solid #0065b0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name,
+.form input:focus + .label-siteName .content-siteName,
+.form input:valid + .label-siteName .content-siteName,
+.form input:focus + .label-siteUrl .content-siteUrl,
+.form input:valid + .label-siteUrl .content-siteUrl {
+  transform: translateY(-150%);
+  font-size: 14px;
+  left: 0;
+  color: #0065b0;
+}
+
+.form input:focus + .label-name:after,
+.form input:valid + .label-name::after,
+.form input:focus + .label-siteName:after,
+.form input:valid + .label-siteName::after,
+.form input:focus + .label-siteUrl:after,
+.form input:valid + .label-siteUrl::after {
+  transform: translateX(0);
+}
+
+.submit {
+  padding: 15px 30px;
+  background: #0bedbb;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.submit:hover {
+  color: white;
+  background: #3da9fc;
 }
